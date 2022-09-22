@@ -13,12 +13,11 @@ import xyz.erupt.upms.model.base.HyperModel;
 import xyz.erupt.jpa.model.BaseModel;
 import java.util.Set;
 import java.util.Date;
-
 @Erupt(name = "薪资",
         power = @Power(add = true, delete = true,
                 edit = true, query = true,
-        importable = true, export = true)
-       )
+                importable = true, export = true)
+)
 @Table(name = "salary")
 @Entity
 public class Salary extends BaseModel {
@@ -144,3 +143,4 @@ public class Salary extends BaseModel {
     private Integer payRoll;
 
 }
+
