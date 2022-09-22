@@ -4,6 +4,11 @@ package com.example.demo.entity;/*
  * Author: YuePeng (erupts@126.com)
  */
 
+/*
+ * Copyright © 2020-2035 erupt.xyz All rights reserved.
+ * Author: YuePeng (erupts@126.com)
+ */
+
 import javax.persistence.*;
 import xyz.erupt.annotation.*;
 import xyz.erupt.annotation.sub_erupt.*;
@@ -16,9 +21,9 @@ import java.util.Date;
 
 @Erupt(name = "薪资",
         power = @Power(add = true, delete = true,
-        edit = true, query = true,
-        importable = true, export = true)
-       )
+                edit = true, query = true,
+                importable = true, export = true,viewDetails = false)
+)
 @Table(name = "salary")
 @Entity
 public class Salary extends BaseModel {
@@ -54,10 +59,10 @@ public class Salary extends BaseModel {
             edit = @Edit(
                     title = "时间",
                     type = EditType.DATE, search = @Search, notNull = true,
-                    dateType = @DateType(type = DateType.Type.MONTH)
+                    dateType = @DateType
             )
     )
-    private String time;
+    private Date time;
 
     @EruptField(
             views = @View(
