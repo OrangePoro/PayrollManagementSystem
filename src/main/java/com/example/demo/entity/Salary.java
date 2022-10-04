@@ -14,6 +14,7 @@ import xyz.erupt.annotation.*;
 import xyz.erupt.annotation.sub_erupt.*;
 import xyz.erupt.annotation.sub_field.*;
 import xyz.erupt.annotation.sub_field.sub_edit.*;
+import xyz.erupt.upms.model.base.HyperDataProxy;
 import xyz.erupt.upms.model.base.HyperModel;
 import xyz.erupt.jpa.model.BaseModel;
 import java.util.Set;
@@ -22,8 +23,7 @@ import java.util.Date;
 @Erupt(name = "薪资",
         power = @Power(add = true, delete = true,
                 edit = true, query = true,
-                importable = true, export = true,viewDetails = false)
-)
+                importable = true, export = true, viewDetails = true))
 @Table(name = "salary")
 @Entity
 public class Salary extends BaseModel {
@@ -52,17 +52,23 @@ public class Salary extends BaseModel {
     )
     private String stuffName;
 
+//    @EruptField(
+//            views = @View(
+//                    title = "时间"
+//            ),
+//            edit = @Edit(
+//                    title = "时间",
+//                    type = EditType.DATE, search = @Search, notNull = true,
+//                    dateType = @DateType
+//            )
+//    )
+//    private Date time;
+
     @EruptField(
-            views = @View(
-                    title = "时间"
-            ),
-            edit = @Edit(
-                    title = "时间",
-                    type = EditType.DATE, search = @Search, notNull = true,
-                    dateType = @DateType
-            )
+            views = @View(title = "时间"),
+            edit = @Edit(title = "时间", search = @Search(vague = true))
     )
-    private Date time;
+    private Date date;
 
     @EruptField(
             views = @View(

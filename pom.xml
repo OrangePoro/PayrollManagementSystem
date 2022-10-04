@@ -96,12 +96,12 @@
             <artifactId>erupt-tpl-ui.amis</artifactId>
             <version>${erupt.version}</version>
         </dependency>
-        <!--magic-api-->
-<!--        <dependency>-->
-<!--            <groupId>xyz.erupt</groupId>-->
-<!--            <artifactId>erupt-magic-api</artifactId>-->
-<!--            <version>${erupt.version}</version>-->
-<!--        </dependency>-->
+        <!--magic-api-->        <dependency>
+        <groupId>xyz.erupt</groupId>
+        <artifactId>erupt-magic-api</artifactId>
+        <version>${erupt.version}</version>
+    </dependency>
+
         <!--velocity-->
         <dependency>
             <groupId>org.apache.velocity</groupId>

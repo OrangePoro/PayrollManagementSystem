@@ -1,5 +1,4 @@
 package com.example.demo.entity;
-
 /*
  * Copyright © 2020-2035 erupt.xyz All rights reserved.
  * Author: YuePeng (erupts@126.com)
@@ -15,11 +14,7 @@ import xyz.erupt.jpa.model.BaseModel;
 import java.util.Set;
 import java.util.Date;
 
-@Erupt(name = "用户",
-        power = @Power(add = true, delete = true,
-        edit = true, query = true,
-        importable = true, export = false)
-        )
+@Erupt(name = "用户")
 @Table(name = "user")
 @Entity
 public class user extends BaseModel {
@@ -59,5 +54,47 @@ public class user extends BaseModel {
             )
     )
     private String userPass;
+
+//    @EruptField(
+//            views = @View(
+//                    title = "时间"
+//            ),
+//            edit = @Edit(
+//                    title = "时间",
+//                    type = EditType.DATE, search = @Search, notNull = true,
+//                    dateType = @DateType
+//            )
+//    )
+//    private Date time;
+
+    @EruptField(
+            views = @View(title = "时间"),
+            edit = @Edit(title = "时间", search = @Search(vague = true))
+    )
+    private Date date;
+
+    @EruptField(
+            views = @View(
+                    title = "分隔"
+            ),
+            edit = @Edit(
+                    title = "分隔",
+                    type = EditType.DIVIDE, notNull = true
+            )
+    )
+    @Transient
+    private String check;
+
+    @EruptField(
+            views = @View(
+                    title = "工资"
+            ),
+            edit = @Edit(
+                    title = "工资",
+                    type = EditType.INPUT, notNull = true,
+                    inputType = @InputType
+            )
+    )
+    private String money;
 
 }
